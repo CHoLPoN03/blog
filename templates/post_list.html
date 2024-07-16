@@ -1,15 +1,9 @@
 {% extends 'index.html' %}
-
-<header>
-
-</header>
-
-<body>
 {% block content %}
-Пост лист(3-я вьюшка)
+{% for post in posts %}
+<div>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.content }}</p>
+</div>
+{% endfor %}
 {% endblock %}
-</body>
-
-<footer>
-
-</footer>

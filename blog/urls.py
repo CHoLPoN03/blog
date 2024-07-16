@@ -18,13 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from posts.views import post_view
 from posts.views import text_view
-from posts.views import html_view
 from posts.views import main_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', post_view),
     path('text/', text_view),
-    path('html/', html_view),
     path('', main_page),
 ]

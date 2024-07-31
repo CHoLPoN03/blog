@@ -1,9 +1,19 @@
 {% extends 'index.html' %}
 {% block content %}
+{% load static%}
 {% for post in posts %}
-<div>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
+
+<div class="card" style="width: 18rem">
+    <a style="margin-top: 10px; margin-bottom: 5px" class="btn btn-primary" href="{{post.id}}">Перейти в пост</a>
+    {%if post.image%}
+    <img src="{{post.image.url}}" class="" alt="...">
+    {%else%}
+    <img src="{% static 'default_anim.jpg'%}">
+    {%endif%}
+    <div class="card-body">
+        <p class="card-text">{{post.content}}</p>
+
+    </div>
 </div>
 {% endfor %}
 {% endblock %}

@@ -10,7 +10,7 @@ class Teg(models.Model):
 
 # Create your models here.
 class Post(models.Model):
-#    image = models.ImageField(upload_to='posts_images/', null=True, blank=True)
+    image = models.ImageField(upload_to='posts_images/', null=True, blank=True)
     title = models.CharField(max_length=100)
     content = models.TextField(null=True, blank=True)
     rate = models.IntegerField(default=0)

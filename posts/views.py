@@ -13,6 +13,10 @@ def text_view(request):
     return HttpResponse("Это вьюшка текста")
 
 
+def post_detail_view(request, post_id):
+    post = Post.objects.get(id=post_id)
+    return render(request,'post_detail_view.html', {'post':post})
+
 
 def main_page(request):
     return render(request, "index.html")
